@@ -3,49 +3,13 @@
 var TurnNumber = 0;
 var listOfpubNames = [];
 var todaysPub;
-var pubs = [
-{
-    "names": ["The Front Door", "Front Door"],
-    "photo": "pics/frontdoor.jpeg",
-    "long": 53.27164781827783,  
-    "lat": -9.05400556567043
-},
-{
-  "names": ["The Dail Bar", "Dail Bar"],
-  "photo": "pics/dailbar.jpeg",
-  "long": 53.27149516068064, 
-"lat": -9.053380272897812
-},
-{
-"names": ["An Pucan", "Pucan"],
-  "photo": "pics/pucan.jpeg",
-  "long": 53.27454209725565, 
-"lat": -9.047404904572806
-},
-{
-    "names": ["The Oslo Bar", "Oslo"],
-      "photo": "pics/oslo.jpeg",
-      "long": 53.259967496100984,  
-    "lat": -9.076507191444716
-    },
-    {
-        "names": ["The Skeff", "Skeffingtom Arms"],
-          "photo": "pics/skeff.jpeg",
-          "long": 53.27413435315633,  
-        "lat": -9.049913328492348
-        },
 
-
-]
-
-// $(document).ready(function () {
-//     startGame();
-// });
 
 window.onload = function startGame(){
    
     //generate todays pub from list TODO
-    todaysPub = Math.floor(Math.random() * pubs.length);
+    //todaysPub = Math.floor(Math.random() * pubs.length);
+    todaysPub = 1;
     document.getElementById("pubPhoto").src = pubs[todaysPub].photo;
    
 }
@@ -56,7 +20,7 @@ function autocomplete(inp) {
    for(i = 0; i < pubs.length; i++)
    {
         for(y = 0; y < pubs[i].names.length; y++){
-            console.log("each pub:" + pubs[i].names[y]);
+            
             listOfpubNames.push(pubs[i].names[y]);
         }
    }

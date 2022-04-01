@@ -49,5 +49,11 @@ input[type=submit] {
 }
 
 .pub-table-row{
-    height: 32px;
+    height: 39px;
+    padding: 5px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
 }
