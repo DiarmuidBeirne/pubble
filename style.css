@@ -54,6 +54,6 @@ input[type=submit] {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
+  color: rgb(228, 227, 227);
   opacity: 1; /* Firefox */
 }

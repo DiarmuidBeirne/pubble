@@ -9,7 +9,7 @@ window.onload = function startGame(){
    
     //generate todays pub from list TODO
     //todaysPub = Math.floor(Math.random() * pubs.length);
-    todaysPub = 1;
+    todaysPub = 0;
     document.getElementById("pubPhoto").src = pubs[todaysPub].photo;
    
 }
@@ -159,7 +159,7 @@ if(validGuess == false){return false}; //validate the guess is a pub from the li
     }
     var tableRowID = "guess" + TurnNumber;
     var row = document.getElementById(tableRowID);
-    row.innerHTML = guess + "  -  Distance: " + distance + " " + units;
+    row.innerHTML = guess + " -  Distance: " + distance + " " + units;
     if (pubs[todaysPub].lat == pubs[pubArrayLocation].lat && pubs[todaysPub].long == pubs[pubArrayLocation].long)
     {
         TurnNumber = 0;
