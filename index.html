@@ -28,7 +28,8 @@
     <div class="alert alert-success" id="winAlert" role="alert" style="display: none; max-width: 400px; width: 100%; margin-left: auto; margin-right: auto;">
      <h2>You Got It!</h2>
      <hr>
-     <p>Share you result with your friends</p>
+     <p id="aboveShareButton"></p>
+     <button type="button" class="btn btn-success" onclick="copyStatusToClipboard(event)">Share you result</button> 
     </div>
 
     <div class="alert alert-danger" id="failAlert" role="alert" style="display: none; max-width: 400px; width: 100%; margin-left: auto; margin-right: auto;">
@@ -63,12 +64,13 @@
         </tbody>
       </table>
       
-      <div style="max-width: 400px; margin-left: auto; margin-right: auto;">
+      <div id="inputDiv" style="display: block; max-width: 400px; margin-left: auto; margin-right: auto;">
       <form autocomplete="off" onsubmit="onSubmit(event);return false" method="post">
         <div class="autocomplete" >
-          <input class="bg-dark text-white" id="pubGuess" type="text" name="myPub" placeholder="Start typing a pub" style="width: 400px;">
+          <input class="bg-dark text-white" id="pubGuess" type="text" name="myPub" placeholder="Start typing a pub" style="width: 400px;" onkeypress="return
+          enterKeyPressed(event)">
         </div>
-        <input class="bg-success text-white" value="Guess!" type="submit" style="margin-top: 4px; width: 400px;" onkeypress="return
+        <input id="pubGuessBtn" class="bg-success text-white" value="Guess!" type="submit" style="margin-top: 4px; width: 400px;" onkeypress="return
         enterKeyPressed(event)">
       </form>
       </div>
@@ -86,6 +88,13 @@
 
     <script>
       autocomplete(document.getElementById("pubGuess"));
+      var pubInput = document.getElementById("pubGuess");
+    pubInput.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("pubGuessBtn").click();
+  }
+});
       </script>
   </body>
 </html>

@@ -114,7 +114,7 @@ var pubs = [
         },
         {
             "names": [
-                "The Blue Note"
+                "The Blue Note", "Blue Note"
             ],
             "photo": "",
             "lat": 53.2700758,
@@ -170,7 +170,7 @@ var pubs = [
         },
         {
             "names": [
-                "Taylors Bar  Beer Garden"
+                "Taylors Bar"
             ],
             "photo": "",
             "lat": 53.2701587,
@@ -186,7 +186,7 @@ var pubs = [
         },
         {
             "names": [
-                "The Salt House"
+                "The Salt House", "Salt House"
             ],
             "photo": "",
             "lat": 53.26986040000001,
@@ -458,7 +458,7 @@ var pubs = [
         },
         {
             "names": [
-                "The Cellar Bar"
+                "The Cellar Bar", "Cellar Bar"
             ],
             "photo": "",
             "lat": 53.27436279999999,
@@ -480,14 +480,7 @@ var pubs = [
             "lat": 53.2746306,
             "long": -9.0468757
         },
-        {
-            "names": [
-                "Skeffington Arms Hotel"
-            ],
-            "photo": "",
-            "lat": 53.2741096,
-            "long": -9.0499308
-        },
+        
         {
             "names": [
                 "Paddys Bar"
@@ -498,7 +491,7 @@ var pubs = [
         },
         {
             "names": [
-                "The Skeff Bar"
+                "The Skeff Bar", "Skeffington Arms Hotel"
             ],
             "photo": "",
             "lat": 53.2741131,
@@ -548,7 +541,7 @@ var pubs = [
         
         {
             "names": [
-                "Thirteen On The Green"
+                "Thirteen On The Green", "Garveys"
             ],
             "photo": "",
             "lat": 53.2743111,
@@ -556,7 +549,7 @@ var pubs = [
         },
         {
             "names": [
-                "Kennedy bar"
+                "Kennedys bar"
             ],
             "photo": "",
             "lat": 53.27539679999999,
@@ -668,7 +661,7 @@ var pubs = [
         },
         {
             "names": [
-                "Crowes Bar  Beer Garden"
+                "Crowes Bar"
             ],
             "photo": "",
             "lat": 53.2774051,

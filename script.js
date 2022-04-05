@@ -3,6 +3,8 @@
 var TurnNumber = 0;
 var listOfpubNames = [];
 var todaysPub;
+var pubInputField;
+var copyText;
 
 
 window.onload = function startGame(){
@@ -11,9 +13,21 @@ window.onload = function startGame(){
     //todaysPub = Math.floor(Math.random() * pubs.length);
     todaysPub = 0;
     document.getElementById("pubPhoto").src = pubs[todaysPub].photo;
+    pubInputField = document.getElementById("pubGuess");
+    console.log("empty: " + pubInputField);
    
 }
 
+// pubInputField.addEventListener("keyup", function(event) {
+//   // Number 13 is the "Enter" key on the keyboard
+//   if (event.keyCode === 13) {
+//     // Cancel the default action, if needed
+//     event.preventDefault();
+//     // Trigger the button element with a click
+//     //document.getElementById("myBtn").click();
+//     console.log("Enter Pressed!!")
+//   }
+// });
 
 function autocomplete(inp) {
    
@@ -167,16 +181,22 @@ if(validGuess == false){return false}; //validate the guess is a pub from the li
 
     }
     row.innerHTML = '<td colspan="5" class="pub-table-row">' + guess + '</td><td class="pub-table-row">' + icon + '</td><td colspan="2 class="pub-table-row">' + distance + " " + units + '</td> ';
-
+    
 
 
 
 
     if (pubs[todaysPub].lat == pubs[pubArrayLocation].lat && pubs[todaysPub].long == pubs[pubArrayLocation].long)
     {
+      var turnWord = " goes";
+      if(TurnNumber == 1){turnWord = " go"};
+      copyText = "I guessed today's Pub in " + TurnNumber + turnWord + "\nTry Pubble at https://pubble-game.herokuapp.com" 
+      document.getElementById("aboveShareButton").innerHTML= "You got todays Pub in " + TurnNumber + turnWord;
         TurnNumber = 0;
         var winnerAlert = document.getElementById("winAlert");
         winnerAlert.style.display = "block";
+        document.getElementById("inputDiv").style.display = "none";
+       
 
     }
     if (TurnNumber == 5)
@@ -186,13 +206,26 @@ if(validGuess == false){return false}; //validate the guess is a pub from the li
     var displayCorrectAnswer = document.getElementById("correctAnswer");
     failAlert.style.display = "block";
     displayCorrectAnswer.innerHTML = "Todays Pub was " + pubs[todaysPub].names[0];
+    document.getElementById("inputDiv").style.display = "none";
 
 
     }
     
     
   }
+
+  function copyStatusToClipboard()
+
+  {
+    console.log("button clicked ");
+    navigator.clipboard.writeText(copyText).then(() => {
+      // Alert the user that the action took place.
+      // Nobody likes hidden stuff being done under the hood!
+      alert("Copied: \n" + copyText + "\nTo your clipboard");
+    });
+  }
       
+
 
   function getDistance(lat1, lon1, lat2, lon2) 
     {
