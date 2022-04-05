@@ -159,7 +159,19 @@ if(validGuess == false){return false}; //validate the guess is a pub from the li
     }
     var tableRowID = "guess" + TurnNumber;
     var row = document.getElementById(tableRowID);
-    row.innerHTML = guess + " -  Distance: " + distance + " " + units;
+    // row.innerHTML = guess + " -  Distance: " + distance + " " + units;
+    var icon = '<img src="pics/rejected.png" width="22" height="22" class="d-inline-block align-top" alt="">'
+    if (pubs[todaysPub].lat == pubs[pubArrayLocation].lat && pubs[todaysPub].long == pubs[pubArrayLocation].long)
+    {
+      icon = '<img src="pics/placeholder.png" width="22" height="22" class="d-inline-block align-top" alt="">'
+
+    }
+    row.innerHTML = '<td colspan="5" class="pub-table-row">' + guess + '</td><td class="pub-table-row">' + icon + '</td><td colspan="2 class="pub-table-row">' + distance + " " + units + '</td> ';
+
+
+
+
+
     if (pubs[todaysPub].lat == pubs[pubArrayLocation].lat && pubs[todaysPub].long == pubs[pubArrayLocation].long)
     {
         TurnNumber = 0;

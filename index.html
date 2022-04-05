@@ -36,38 +36,39 @@
       <hr>
       <p id="correctAnswer"></p>
      </div>
-    <!-- <div class="" id="failAlert" role="alert" style="display: none; width: 400px; padding-left: 33%; padding-right: 33%;">
+    <div class="" id="failAlert" role="alert" style="display: none; width: 400px; padding-left: 33%; padding-right: 33%;">
       <h4 class="alert-heading">Hard Luck!</h4>
       <p id="correctAnswer"></p>
       
-    </div> -->
+    </div> 
     <table class="table table-light table-bordered table-striped" id="guessTable" style="width: 400px; margin-left: auto; margin-right: auto;">
         <tbody>
-          <tr>      
-            <td id="guess1" class="pub-table-row"></td> 
+          
+          <tr id="guess1">      
+            <td  colspan="8" class="pub-table-row"></td> 
           </tr>
-          <tr>
-            <td id="guess2" class="pub-table-row"></td>  
+          <tr id="guess2">
+            <td colspan="8" class="pub-table-row"></td>  
           </tr>
-          <tr>   
-            <td id="guess3" class="pub-table-row"></td>
+          <tr id="guess3">   
+            <td  colspan="8" class="pub-table-row"></td>
           </tr>
-          <tr>      
-            <td id="guess4" class="pub-table-row"></td> 
+          <tr id="guess4">      
+            <td  colspan="8" class="pub-table-row"></td> 
           </tr>
-          <tr>
-            <td id="guess5" class="pub-table-row"></td>  
+          <tr id="guess5">
+            <td  colspan="8" class="pub-table-row"></td>  
           </tr>
           
         </tbody>
       </table>
-
+      
       <div style="max-width: 400px; margin-left: auto; margin-right: auto;">
       <form autocomplete="off" onsubmit="onSubmit(event);return false" method="post">
         <div class="autocomplete" >
-          <input class="bg-dark text-white" id="pubGuess" type="text" name="myPub" placeholder="Guess the Pub!" style="width: 400px;">
-        </div><br>
-        <input class="bg-warning text-dark"  type="submit" style="margin-top: 20px; width: 400px;" onkeypress="return
+          <input class="bg-dark text-white" id="pubGuess" type="text" name="myPub" placeholder="Start typing a pub" style="width: 400px;">
+        </div>
+        <input class="bg-success text-white" value="Guess!" type="submit" style="margin-top: 4px; width: 400px;" onkeypress="return
         enterKeyPressed(event)">
       </form>
       </div>
